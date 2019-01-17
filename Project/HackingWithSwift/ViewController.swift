@@ -8,31 +8,16 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    var allProjects = [Project]()
-    var showingProjects = [Project]()
     var user = User()
+    var dataSource = TableDataSource()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = dataSource
 
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(showSettings))
 
-        guard let url = Bundle.main.url(forResource: "projects", withExtension: "json") else {
-            fatalError("Failed to locate projects.json in app bundle.")
-        }
-
-        guard let data = try? Data(contentsOf: url) else {
-            fatalError("Failed to load projects.json in app bundle.")
-        }
-
-        let decoder = JSONDecoder()
-
-        guard let loadedProjects = try? decoder.decode([Project].self, from: data) else {
-            fatalError("Failed to decode projects.json from app bundle.")
-        }
-
-        allProjects = loadedProjects
         updatePreferences()
     }
 
@@ -55,16 +40,7 @@ class ViewController: UITableViewController {
     func updatePreferences() {
         title = user.name
 
-        if user.showProjects == 0 {
-            // show all projects
-            showingProjects = allProjects
-        } else {
-            // show only the project types they selected
-            showingProjects = allProjects.filter {
-                $0.number % 3 == user.showProjects - 1
-            }
-        }
-
+        dataSource.filterData(number: user.showProjects)
         tableView.reloadData()
     }
 
@@ -72,19 +48,8 @@ class ViewController: UITableViewController {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return showingProjects.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let project = showingProjects[indexPath.row]
-        cell.textLabel?.attributedText = project.makeAttributedString()
-        return cell
-    }
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let project = showingProjects[indexPath.row]
+        let project = dataSource.showingProjects[indexPath.row]
 
         guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
             return

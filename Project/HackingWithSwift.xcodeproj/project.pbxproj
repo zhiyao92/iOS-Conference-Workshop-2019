@@ -25,6 +25,7 @@
 		51D797C021EDBD1A00B31E59 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D797BF21EDBD1A00B31E59 /* User.swift */; };
 		7FCE124621F01B400059D9E4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCE124521F01B400059D9E4 /* DetailView.swift */; };
 		7FCE124821F025CA0059D9E4 /* WKNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCE124721F025CA0059D9E4 /* WKNavigationView.swift */; };
+		7FCE124A21F02E470059D9E4 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCE124921F02E470059D9E4 /* TableDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		51D797BF21EDBD1A00B31E59 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7FCE124521F01B400059D9E4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		7FCE124721F025CA0059D9E4 /* WKNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKNavigationView.swift; sourceTree = "<group>"; };
+		7FCE124921F02E470059D9E4 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				5155740521AEBECE00FEE77E /* ProjectRenderers */,
 				519AE14C2194787D001F5CFF /* AppDelegate.swift */,
 				519AE14E2194787D001F5CFF /* ViewController.swift */,
+				7FCE124921F02E470059D9E4 /* TableDataSource.swift */,
 				519AE16C21947911001F5CFF /* DetailViewController.swift */,
 				7FCE124521F01B400059D9E4 /* DetailView.swift */,
 				519AE17221948C5A001F5CFF /* ReadViewController.swift */,
@@ -249,6 +252,7 @@
 				51D797BE21EDB37B00B31E59 /* SettingsViewController.swift in Sources */,
 				519AE16F219479E3001F5CFF /* Project.swift in Sources */,
 				5155740721AED1B000FEE77E /* Logger.swift in Sources */,
+				7FCE124A21F02E470059D9E4 /* TableDataSource.swift in Sources */,
 				519BA1EA21AE8BEB0078B6F6 /* AppProjectRenderer.swift in Sources */,
 				5155740421AEBA4900FEE77E /* TechniqueProjectRenderer.swift in Sources */,
 				5155740221AEB92500FEE77E /* GameProjectRenderer.swift in Sources */,
