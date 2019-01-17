@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='00TOC'/>
+        <page name='01PartialApplication'/>
+        <page name='02HigherOrder'/>
+        <page name='03MappingArrays'/>
+        <page name='04MappingDictionaries'/>
+        <page name='05MappingOptionals'/>
+        <page name='06ResultType'/>
+        <page name='07FlatMappingSequences'/>
+        <page name='08FlatMappingOptionals'/>
+        <page name='09CompactMap'/>
+        <page name='10OurOwnFlatMap'/>
+    </pages>
+</playground>
