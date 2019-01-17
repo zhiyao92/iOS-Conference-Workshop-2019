@@ -19,5 +19,7 @@ let hoursForTheWeek = [Weekdays.mon: 3.5.hours,
                        .tue: 10.hours, .wed: 7.hours,
                        .thu: 12.hours, .fri: 4.6.hours]
 
+let result2 = hoursForTheWeek.mapValues{hours in pay15for(hours)}
+result2.description
 
 //: [TOC](00TOC) - [Previous](@previous) - [Next](@next)
